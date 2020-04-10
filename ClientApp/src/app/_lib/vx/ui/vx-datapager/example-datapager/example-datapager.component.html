@@ -1,0 +1,36 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of data;">
+            <th>{{item.id}}</th>
+            <td>{{item.name}}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<hr>
+
+<!-- Pager Description -->
+<div class="text-center mb-2" *ngIf="pagerDescription.hasData">
+    <small class="page-counts">{{ pagerDescription.firstItemNumber }} - {{ pagerDescription.lastItemNumber }} of
+        {{ pagerDescription.totalItems }}</small>
+    &nbsp;
+    on
+    <small class="page-totals">{{ pagerDescription.totalPages }}</small> page<small *ngIf="pagerDescription.totalPages > 1">s</small>
+</div>
+
+<!-- Pager -->
+<vx-datapager [value]="pagerInput" (pageChange)="onPageChange($event)" [showRangeNavArrows]="false"  >
+</vx-datapager>
+
+<!-- Pager Description -->
+<div class="text-center mt-1"><small *ngIf="pagerDescription.hasData">Total : {{pagerDescription.totalItems}} records</small></div>
+
+<hr>
+

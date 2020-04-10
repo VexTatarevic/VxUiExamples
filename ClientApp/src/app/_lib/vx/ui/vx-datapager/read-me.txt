@@ -1,0 +1,42 @@
+
+/**
+ * Data Pager module
+ *
+ * @author Vex Tatarevic 2018-02-08
+ * @copyright VEXIT 2020 www.vexit.com
+ */
+
+
+----------------------------------------------------------------
+        Description:
+----------------------------------------------------------------
+
+Allows display of data paging on clientside and facilitates mechanism for serverside paging.
+
+Features:
+    Self-contained module
+    Page Ranges
+    Serverside paging
+    Bootstrap pagination css classes used - not dependent on Bootstrap (if not using bootstrap provide your own style for the included css classes)
+    
+
+
+----------------------------------------------------------------
+        History:
+----------------------------------------------------------------
+
+
+        2020-03-06      Complete Rework: 
+
+                            Page Ranges                     -  implemented page ranges feature
+
+                            New Page Rendering algorithm    - Page rendering algorithm completely rewriten by Vex Tatarevic.
+
+                            Self-contained                  - Component encapsulated in its own module 
+
+
+        2019-01-17      Serveside data paging implemented.  Page links rendering algorithm taken from third party source (was dysfunctional)
+
+        2018-02-08      Initial version with clientside data paging
+
+        

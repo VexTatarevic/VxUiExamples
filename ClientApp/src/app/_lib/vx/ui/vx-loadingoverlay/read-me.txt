@@ -1,0 +1,42 @@
+
+/**
+ * Loading Overlay module.
+ *
+ * @author Vex Tatarevic 2018-02-01
+ * @copyright VEXIT 2020 www.vexit.com
+ */
+
+----------------------------------------------------------------
+        Description:
+----------------------------------------------------------------
+
+Provides dynamically loaded loading overlay that will get displayed over the element that contains attribute vx-loadingoverlay
+ Or 
+ Global/Page level loading overlay that gets displayed over the whole page via VxLoadingoverlayService show and hide methods.
+    
+
+
+----------------------------------------------------------------
+        History:
+----------------------------------------------------------------
+
+        2018-02-01      Initial version with basic static global overlay that is triggered via service
+        
+        2020-03-06      Complete rework : 
+
+                                Implemented dynamically loaded VxLoadingoverlay component via anchor directive feature
+                                
+                                Element level loading overlay: Now loading overlay can be applied easily to any div or other component via directive like: 
+                                        
+                                        <div [vxLoadingoverlay]="isLoading"> ... </div>
+                                
+                                Page level loading overlay can be invoked via VxLoadingoverlayService like:
+                                        
+                                        this.loadingOverlaySvc.show('Loading ...');
+
+                                        this.loadingOverlaySvc.hide();
+                                        
+                        Ref: https://angular.io/guide/dynamic-component-loader
+
+
+

@@ -1,0 +1,41 @@
+
+ 
+<nav *ngIf="hasData">
+    <ul class="pagination justify-content-center">
+
+        <!-- First Page Link -->
+        <li class="page-item" [ngClass]="page === 1 ? 'disabled' : ''" *ngIf="range.length > 1">
+            <a class="page-link" (click)="onFirst()"> |&lt; </a>
+        </li>
+
+        <!-- Previous Range Link -->
+        <li class="page-item" [ngClass]="isFirstRange ? 'disabled': ''" *ngIf="showRangeNavArrows && (totalRanges > 1)">
+            <a class="page-link" (click)="onPreviousRange()">&lt;&lt;</a>
+        </li>
+
+        <!-- Previous Page Link -->
+        <li class="page-item" [ngClass]="page > 1 ? '' : 'disabled'" *ngIf="showPageNavArrows && (range.length > 1)" >
+            <a class="page-link" (click)="onPreviousPage()">&lt;</a>
+        </li>
+
+        <!-- Page Number Links -->
+        <li *ngFor="let pageNumber of range" class="page-item" [ngClass]="pageNumber === page ? 'active': ''">
+            <a class="page-link" (click)="onPage(pageNumber)">{{ pageNumber }}</a>
+        </li>
+
+        <!-- Next Page Link -->
+        <li class="page-item" [ngClass]="isLastPage ? 'disabled': ''" *ngIf="showPageNavArrows && (range.length > 1)">
+            <a class="page-link" (click)="onNextPage()"> &gt;</a>
+        </li>
+
+        <!-- Next Range Link -->
+        <li class="page-item" [ngClass]="isLastRange ? 'disabled': ''" *ngIf="showRangeNavArrows && (totalRanges > 1)">
+            <a class="page-link" (click)="onNextRange()"> &gt;&gt;</a>
+        </li>
+
+        <!-- Last Page Link -->
+        <li class="page-item" [ngClass]="isLastPage ? 'disabled': ''">
+            <a class="page-link" (click)="onLast()">&gt;|</a>
+        </li>
+    </ul>
+</nav>
